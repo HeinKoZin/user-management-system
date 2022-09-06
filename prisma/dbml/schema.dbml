@@ -1,0 +1,18 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table users {
+  id Int [pk, increment, note: '@zod.optional()']
+  name String [not null]
+  email String [unique, not null]
+  password String [not null]
+  role UserRole [not null, default: 'USER', note: '@zod.optional()']
+  createdAt DateTime [default: `now()`, not null, note: '@zod.optional()']
+  updatedAt DateTime [not null, note: '@zod.optional()']
+}
+
+Enum UserRole {
+  ADMIN
+  USER
+}
